@@ -1,15 +1,15 @@
 class Page
-  @@regex = / Respuestas:\s+(?: - [\p{L} ,\d:%\.\/\(\)\-¿\? °;–"]+\.\n{1,})+/
+  @@regex = / Respuestas:\s+(?:\s+- [\p{L} ,\d:%\.\/\(\)\-¿\? °;–"]+\.?\n{1,})+/
   def initialize(page)
-    @text = page.sql_attrs
+    @text = page.text
   end
 
   def questions
-    @questions ||= @text.split(@@regex).map{|x| x.gsub("\n", "<br>")}
+    @questions ||= @text.split(@@regex)
   end
 
   def answers
-    @answers ||= @text.scan(@@regex).map{|x| x.gsub(/\n+/, "<br>")}
+    @answers ||= @text.scan(@@regex)
   end
 
   def q_a

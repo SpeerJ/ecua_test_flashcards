@@ -120,12 +120,3 @@ class AnswerModel < Model
     'answers'
   end
 end
-
-a = QuestionModel.new('asdf asdf asdf')
-a.save
-
-AnswerModel.new(a, 'asdf').save
-AnswerModel.new(a, 'basdf').save
-AnswerModel.new(a, 'asdfsdf').save
-
-Query.sync
