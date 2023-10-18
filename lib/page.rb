@@ -1,5 +1,5 @@
 class Page
-  @@regex = / Respuestas:\s+(?:\s+- [\p{L} ,\d:%\.\/\(\)\-¿\? °;–"]+\.?\n{1,})+/
+  @@regex = / Respuestas:\s+(?:\s+- ([\p{L} ,\+\d:%\.\/\(\)\-¿\? °;–"]+\.?\n+(?:\s\w+\.)?))+/
   def initialize(page)
     @text = page.text
   end

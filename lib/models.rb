@@ -86,7 +86,7 @@ class QuestionModel < Model
   attr_reader :data
 
   def initialize(data)
-    @data = "'#{data}'"
+    @data = "'QUESTION #{data}'"
   end
 
   # def create_answer(data)

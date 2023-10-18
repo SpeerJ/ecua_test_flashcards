@@ -21,9 +21,6 @@ pdf_reader.pages.each_with_index do |page, index|
     q = QuestionModel.new(k)
     q.save
     AnswerModel.new(q, v).save
-    #@anki.add_card(k, v)
-    #puts index
-    #puts v.split('<br>')[0]
   end
 end
 Query.sync()
